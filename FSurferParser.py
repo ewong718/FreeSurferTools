@@ -1,5 +1,5 @@
 '''
-Last modified on Aug 1, 2014
+Last modified on Aug 3, 2014
 
 @author: Edmund Wong
 '''
