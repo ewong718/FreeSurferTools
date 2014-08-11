@@ -1,5 +1,5 @@
 '''
-Last modified on Aug 5, 2014
+Last modified on Aug 11, 2014
 
 @author: Edmund Wong
 '''
@@ -20,7 +20,7 @@ Commands
 
 *Mandatory
 -i The input directory containing all recon-all FreeSurfer output directories
--o The full filename and path to output csv file
+-o The output path
 """
 
 
@@ -82,8 +82,8 @@ def createFSCsv(statsfile, outCsvName, label_col, val_col, outputDir):
         f = open(fsFile, "r")
         for line in f:
             if (line[0] != "#"):
-                lll = line.split()
-                subList.append(lll[label_col])
+                row_elmt = line.split()
+                subList.append(row_elmt[label_col])
         wholeList.append(subList)
         break
 
@@ -93,14 +93,14 @@ def createFSCsv(statsfile, outCsvName, label_col, val_col, outputDir):
         subList.append(fsFile[0:15])
         for line in f:
             if (line[0] != "#"):
-                lll = line.split()
-                subList.append(lll[val_col])
+                row_elmt = line.split()
+                subList.append(row_elmt[val_col])
         wholeList.append(subList)
 
     with open(outputDir + "/" + outCsvName, 'wb') as fp:
-        a = csv.writer(fp, delimiter=',')
+        writerObj = csv.writer(fp, delimiter=',')
         data = wholeList
-        a.writerows(data)
+        writerObj.writerows(data)
 
     print "Success. See output file at " + outputDir + "/" + outCsvName
 
