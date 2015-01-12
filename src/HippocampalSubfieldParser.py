@@ -13,8 +13,8 @@ def main():
             inputFile = value
         if option in ("-o"):
             outputdir = value
-    inputFile = "/Users/edmundwong/Desktop/murrough_Freesurfer/nonPartialVolumeStatsRight.txt"
-    outputDir = "/Users/edmundwong/Desktop/murrough_Freesurfer/"
+    #inputFile = "/Users/edmundwong/Desktop/murrough_Freesurfer/nonPartialVolumeStatsRight.txt"
+    #outputDir = "/Users/edmundwong/Desktop/murrough_Freesurfer/"
     outCsvName = "HippocampalSubfields.csv"
     f = open(inputFile, "r")
 
