@@ -12,7 +12,7 @@ def main():
         if option in ("-i"):
             inputFile = value
         if option in ("-o"):
-            outputdir = value
+            outputDir = value
     #inputFile = "/Users/edmundwong/Desktop/murrough_Freesurfer/nonPartialVolumeStatsRight.txt"
     #outputDir = "/Users/edmundwong/Desktop/murrough_Freesurfer/"
     outCsvName = "HippocampalSubfields.csv"
