@@ -71,6 +71,8 @@ def main():
 
     # RH Cortical Parcellation: Integrated Rectified Mean Curvature (mm^-1)
     createFSCsv("rh.aparc.stats", "rh_parc_MeanCurv.csv", 0, 6, outputDir)
+    
+    createFSCsv("wmparc.stats", "wmparc.csv", 4, 3, outputDir)
 
 
 def createFSCsv(statsfile, outCsvName, label_col, val_col, outputDir):
@@ -90,7 +92,7 @@ def createFSCsv(statsfile, outCsvName, label_col, val_col, outputDir):
     for fsFile in glob.glob("*/stats/" + statsfile):
         subList = list()
         f = open(fsFile, "r")
-        subList.append(fsFile[0:15])
+        subList.append(fsFile)
         for line in f:
             if (line[0] != "#"):
                 row_elmt = line.split()
